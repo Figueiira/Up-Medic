@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 90vh;
+  font-family: Arial, sans-serif;
+  background-image: 
+    linear-gradient(to right, #B491CA, #E9EAF6, #3a1c71),
+    url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+ 
+}
+
+
+section {
+  background-color: #E9EAF6;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+.img-logo{
+  display: block;
+  margin: 0 auto 20px auto; 
+  max-width: 100%;
+  height: auto;
+}
+h1 {
+  text-align: center;
+}
+
+form.formLogin1 {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*responsivo para formulario de login*/
+@media (max-width: 600px) {
+  .formLogin1 .form-row input {
+    margin:auto;
+    
+    min-width: 100%;
+  }
+  input[type="submit"]{
+    max-width: 100%;
+  }
+ 
+  section{
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    transform: translate(-30% -50%);
+  }
+}
+
+form.formLogin1 input[type="email"],
+form.formLogin1 input[type="password"],
+form.formLogin1 input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+}
+
+input[type="submit"] {
+  background-color: rgb(99, 7, 117);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(120, 30, 145);
+}
+
+.formLogin2 {
+  margin-top: 20px;
+}
+
+.formLogin2 .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.formLogin2 .form-row input {
+  flex: 1;
+  min-width: 47%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Se a tela for estreita, os campos ficam um embaixo do outro */
+@media (max-width: 600px) {
+  .formLogin2 .form-row input {
+    min-width: 100%;
+  }
+  input[type="submit"]{
+    max-width: 100%;
+  }
+  section{
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    transform: translate(-50% -50%);
+  }
+}
+
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(99, 7, 117);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+input[type="submit"]:hover {
+  background-color: rgb(120, 30, 145);
+}
+
+
+
+/* Estilo exclusivo para o formulário de registro */
+form .form-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+form .form-line label {
+  width: 150px;
+  font-weight: bold;
+  color: #333;
+}
+
+form .form-line input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+section {
+  background-color: #E9EAF6;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

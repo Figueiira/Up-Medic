@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Clínica Up Medic</title>
+</head>
+<body>
+   <section>
+        <h1 style="color: rgb(99, 7, 117);">Registro Up Medic</h1>
+        <img src="../static/upmedic.png" alt="" srcset="" height="200px" width="500px" class="img-logo">
+        <div class="formLogin2">
+        <form action="" method="post">
+            
+            <div class="form-row">
+                <input type="text" name="nome" id="nome" required placeholder="Nome">
+                <input type="number" name="cpf" id="cpf" required placeholder="CPF">
+                </div>
+
+                <div class="form-row">
+                <input type="email" name="email-user" id="email" required placeholder="Email">
+                <input type="number" name="numero" id="numero" required placeholder="Telefone">
+                </div>
+
+                <div class="form-row">
+                <input type="password" name="senha" id="senha-user" required maxlength="50" placeholder="Senha">
+                <input type="password" name="confirma_senha" id="senha-user-confirma" required maxlength="50" placeholder="Confirmar Senha">
+                </div>
+
+                <input type="submit" value="ENVIAR">
+            </div>
+        </form>
+        
+
+   </section>
+</body>
+</html>

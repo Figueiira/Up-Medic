@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>Login Clínica Up Medic</title>
+</head>
+<body>
+    <div class="space"></div>
+    <section>
+        <h1 style="color: rgb(99, 7, 117);">Login Up Medic</h1>
+        <img src="{{ url_for('static', filename='upmedic.png') }}" alt="Logo Up Medic" height="200" width="500" class="img-logo" />
+        <form action="" method="post" class="formLogin1">
+            <input type="email" name="email-user" id="email" required placeholder="Email:" />
+            <label for="email-user"></label>
+            <input type="password" name="senha" id="senha-user" required maxlength="50" placeholder="Sua senha:" />
+            <label for="password"></label>
+
+            <input type="submit" value="LOGIN" />
+        </form>
+        <a href="{{ url_for('cadastro') }}">Não tem uma conta? Registre-se aqui:</a>
+    </section>
+</body>
+</html>

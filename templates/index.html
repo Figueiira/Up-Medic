@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Clínica Up Medic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}" />
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='upmedic.png') }}" alt="Logo Up Medic" height="80px" width="200px" class="img-logo" />
+  </header>
+  <main>
+    <section class="dashboard">
+      <h1>Bem-vindo {{nome_usuario}} à Clínica Up Medic</h1>
+      <h3 style="color: #7a107a;">Selecione uma opção abaixo:</h3><br>
+      <div class="button-grid">
+        <a href="#" class="btn-dashboard">
+            <i class="fas fa-calendar-check"></i> Agendar Consulta
+        </a>
+
+        <a href="#" class="btn-dashboard">
+            <i class="fas fa-vials"></i> Agendar Exame
+        </a>
+
+        <a href="#" class="btn-dashboard">
+            <i class="fas fa-clipboard-list"></i> Consultas Marcadas
+        </a>
+
+        <a href="#" class="btn-dashboard">
+            <i class="fas fa-history"></i> Visualizar Histórico
+        </a>
+
+        <a href="#" class="btn-dashboard">
+            <i class="fas fa-ban"></i> Cancelar Consulta/Exame
+        </a>
+
+        <a href="{{ url_for('logout') }}" class="btn-dashboard">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </a>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer><h5><a href=""><i class="fa-solid fa-user" style="color: #7a107a;"></i></a></h5></footer>
+</body>
+
+</html>

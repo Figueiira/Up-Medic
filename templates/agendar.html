@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agendamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #B491CA, #E9EAF6, #3a1c71);
+      color: #333;
+      padding: 20px;
+      min-height: 90vh;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #7a5daf;
+      color: white;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; color: white;">Agendar Horário</h1>
+
+  <form method="POST" action="{{ url_for('agendar') }}">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required />
+
+    <label for="data">Data</label>
+    <select name="data" id="data" onchange="this.form.submit()">
+      <option value="">Selecione uma data</option>
+      {% for data in disponibilidades.keys() %}
+        <option value="{{ data }}" {% if data == data_selecionada %}selected{% endif %}>{{ data }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="horario">Horário</label>
+    <select name="horario" id="horario" {% if not horarios_disponiveis %}disabled{% endif %} required>
+      {% if horarios_disponiveis %}
+        {% for hora in horarios_disponiveis %}
+          <option value="{{ hora }}">{{ hora }}</option>
+        {% endfor %}
+      {% else %}
+        <option>Selecione uma data</option>
+      {% endif %}
+    </select>
+
+    <label for="especialidade">Especialidade</label>
+    <select name="especialidade" id="especialidade" required>
+      {% for esp in especialidades %}
+        <option value="{{ esp }}">{{ esp }}</option>
+      {% endfor %}
+    </select>
+
+    {% if data_selecionada %}
+      <button type="submit">Agendar</button>
+    {% endif %}
+  </form>
+
+</body>
+</html>

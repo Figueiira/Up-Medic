@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consultas Marcadas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #B491CA, #E9EAF6, #3a1c71);
+      color: #333;
+      padding: 20px;
+      min-height: 90vh;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #7a5daf;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f5f0fa;
+    }
+    .no-data {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-style: italic;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: #7a5daf;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a:hover {
+      background: #654a9a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Consultas Marcadas</h1>
+
+  {% if agendamentos %}
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Especialidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ag in agendamentos %}
+          <tr>
+            <td>{{ ag.nome }}</td>
+            <td>{{ ag.data }}</td>
+            <td>{{ ag.horario }}</td>
+            <td>{{ ag.especialidade }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="no-data">Nenhuma consulta agendada.</p>
+  {% endif %}
+
+  <a href="{{ url_for('agendar') }}">Voltar para Agendar</a>
+
+</body>
+</html>
